@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "dev.raja.passportcam"
+    namespace = "org.syntrolabs.passportcam"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "dev.raja.passportcam"
+        applicationId = "org.syntrolabs.passportcam"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
     }
 
     // Release signing comes from the environment (CI secrets or a local shell); without it the

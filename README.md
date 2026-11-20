@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Anuraj-dev/passportcam/releases/latest">Download APK</a>
+  <a href="https://github.com/Syntrolabs-org/passportcam/releases/latest">Download APK</a>
   ·
   <a href="#installation">Install</a>
   ·
@@ -38,7 +38,7 @@ This is a personal Android app, distributed as a sideloaded APK. It needs Androi
 
 ## Installation
 
-1. Download `PassportPhoto-vX.Y.Z.apk` from the [latest release](https://github.com/Anuraj-dev/passportcam/releases/latest).
+1. Download `PassportPhoto-vX.Y.Z.apk` from the [latest release](https://github.com/Syntrolabs-org/passportcam/releases/latest).
 2. Open the APK on the phone. When Android asks, allow installs from this source.
 3. Optional: verify the download with the `.sha256` file from the same release. On a computer, run:
 
@@ -47,6 +47,8 @@ sha256sum -c PassportPhoto-vX.Y.Z.apk.sha256
 ```
 
 The app needs Android 8.0 or newer. A debug build has a different signature from the release APK, so uninstall any debug build before you install a release.
+
+Upgrading from v1.0.0: v1.0.1 uses a new app ID (`org.syntrolabs.passportcam`), so it installs as a separate app. Uninstall the old Passport Photo first.
 
 On Android 8 and 9, the app declares no storage permission, so MediaStore may refuse the save. The photos then go to the app's own folder and don't show in Recent. That fallback has not been tested on a device.
 
@@ -61,7 +63,7 @@ photo from the camera or the picker
   -> PhotoSaver       MediaStore insert into Pictures/PassportPhotos
 ```
 
-Every step logs through `PLog` with an `[area]` prefix. Run `adb logcat -s PassportCam` to see the sizes, timings and chosen quality for each face. The tunables, including the size cap, output sides, quality range and minimum face size, live in [`Config.kt`](app/src/main/java/dev/raja/passportcam/core/Config.kt).
+Every step logs through `PLog` with an `[area]` prefix. Run `adb logcat -s PassportCam` to see the sizes, timings and chosen quality for each face. The tunables, including the size cap, output sides, quality range and minimum face size, live in [`Config.kt`](app/src/main/java/org/syntrolabs/passportcam/core/Config.kt).
 
 The app is written in Kotlin with Jetpack Compose and Material 3. It uses CameraX for the viewfinder, the ML Kit face detection library, ExifInterface for rotation, and MediaStore for saving.
 
